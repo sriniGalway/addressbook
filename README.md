@@ -1,4 +1,4 @@
-# Addressbook Management usign Python 3 & Django
+# Address book Management using Python 3 & Django
 Backend system for managing Address Books
 
 Technolgies used:
