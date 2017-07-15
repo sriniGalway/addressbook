@@ -1,6 +1,5 @@
-# addressbook
+# Addressbook Management usign Python 3 & Django
 Backend system for managing Address Books
-
 
 Technolgies used:
 -----------------
@@ -48,5 +47,7 @@ To run the Django Development server, use:
     python manage.py runserver
 
 we can access admin and the entries respectively at
-    http://localhost:8000/admin
-    http://localhost:8000/show
+```
+      http://localhost:8000/admin
+      http://localhost:8000/show
+```
