@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 
+from django.db.models import Q #for search query
+
 #Avid Media project specific
 from .models import EntryModel
 from .forms import EntryForm
@@ -85,10 +87,15 @@ def entries_detail_view(request, id=None):
 
 @login_required(login_url='/admin/login/')
 def entries_list_view(request):
-
-    print(request.user)
-
+    query = request.GET.get("q")
     entries_list = EntryModel.objects.all()
+    if query is not None:
+        entries_list = entries_list.filter(
+                Q(name__icontains=query) |
+                Q(surname__icontains=query) |
+                Q(mobile__icontains=query) |
+                Q(email__icontains=query)
+                )
     context_dictionary = {'entries_list': entries_list}
 
     if request.user.is_authenticated():

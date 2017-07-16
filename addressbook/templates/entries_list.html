@@ -5,10 +5,20 @@
   {% endfor %}
 </h3>
 {% endif %}
+
+
 <html>
-<head><title>Address Book</title><head>
+<head><title>Address Book</title>
+  <head>
 <h1>Address Book</h1>
+<h3>Perform search by name, address, mobile number, or email address</h3>
+
+<form method='GET' action='/entries/'>
+<input type='text' name='q' placeholder='Search'>
+</form>
 <body>
+
+
 <td>Name</td>
 <table>
 <tr>
