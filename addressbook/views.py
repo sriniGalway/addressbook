@@ -94,8 +94,9 @@ def entries_list_view(request):
                 Q(name__icontains=query) |
                 Q(surname__icontains=query) |
                 Q(mobile__icontains=query) |
-                Q(email__icontains=query)
-                )
+                Q(email__icontains=query) |
+                Q(address__icontains=query)
+                ) #search by either of the fields
     context_dictionary = {'entries_list': entries_list}
 
     if request.user.is_authenticated():
