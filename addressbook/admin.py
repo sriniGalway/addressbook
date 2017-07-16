@@ -1,7 +1,29 @@
 from django.contrib import admin
-from addressbook.models import Entry
- 
-admin.site.register(Entry)
+from addressbook.models import EntryModel
+
+admin.site.register(EntryModel)
+
+class EntryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'surname', 'mobile', 'address', 'email')
+
+    def has_change_permission(self, request, obj=None):
+        has_class_permission = super(EntryAdmin, self).has_change_permission(request, obj)
+        if not has_class_permission:
+            return False
+        if obj is not None and not request.user.is_superuser and request.user.id != obj.author.id:
+            return False
+        return True
+
+    def queryset(self, request):
+        if request.user.is_superuser:
+            return EntryModel.objects.all()
+        return EntryModel.objects.filter(author=request.user)
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.author = request.user
+        obj.save()
+
 
 def clean_email(self):
         try:

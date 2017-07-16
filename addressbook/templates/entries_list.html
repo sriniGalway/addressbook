@@ -2,27 +2,15 @@
 <head><title>Address Book</title><head>
 <h1>Address Book</h1>
 <body>
+<td>Name</td>
 <table>
 <tr>
-<td>Name</td>
-<td>Surame</td>
-<td>Mobile</td>
-<td>Address</td>
-<td>Email</td>
 </tr>
 {% for entry in entries_list %}
-<tr>
-<td>
-{{ entry.name }}</td>
-<td>
-{{ entry.surname }}</td>
-<td>
-{{ entry.mobile }}</td>
-<td>
-{{ entry.address }}</td>
-<td>
-{{ entry.email }}</td>
-</tr>
+<li>
+  <a href='/entries/{{ entry.id }}' >{{ entry.name }} </a>
+
+</li>
 {% endfor %}</table>
 </body>
 </html>

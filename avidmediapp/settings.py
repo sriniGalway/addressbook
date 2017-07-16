@@ -26,7 +26,7 @@ SECRET_KEY = 'k0#e76=@ag=z#*(!*qu!(gumvhp5bspu!$a2n8+*s9c)@j*reg'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = "/login/"
 
 # Application definition
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'avidmediapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-	'DIRS': [os.path.join(BASE_DIR, 'templates')],
+	    'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

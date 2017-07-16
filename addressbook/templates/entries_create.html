@@ -1,0 +1,15 @@
+{% if messages %}
+<h3 class="messages">
+  {% for message in messages %}
+  <h3{% if message.tags %} class ="{{ message.tags}}"{% endif %}>{{ message }}</h3>
+  {% endfor %}
+</h3>
+{% endif %}
+<h1>Create new Entry</h1>
+
+<form method='POST' action='.'>
+{% csrf_token %}
+{{ form.as_p}}
+
+<input type = 'submit' value ='Create'>
+</form>
