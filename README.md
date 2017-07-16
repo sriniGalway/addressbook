@@ -61,3 +61,4 @@ Note:
 ```
 To perform serach on the entries, use:
     search field in http://localhost:8000/entries
+    We can Perform search by name, address, mobile number, or email address
