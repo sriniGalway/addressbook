@@ -1,0 +1,8 @@
+<h1>Delete the user : {{ entry.name }} </h1>
+
+<form method='POST' action='.'>
+{% csrf_token %}
+Are you sure you want to delete this entry?
+<input type = 'submit' value ='Yes'>
+<a href='/entries/{{ entry.id }}'>Cancel</a>
+</form>

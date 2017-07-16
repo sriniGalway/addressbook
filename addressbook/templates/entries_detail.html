@@ -1,4 +1,10 @@
-
+{% if messages %}
+<h3 class="messages">
+  {% for message in messages %}
+  <h3{% if message.tags %} class ="{{ message.tags}}"{% endif %}>{{ message }}</h3>
+  {% endfor %}
+</h3>
+{% endif %}
 <html>
 <head><title>Address title</title><head>
 <h1>Address Book for id: {{ entry.id }}</h1>
@@ -23,5 +29,7 @@
 <td>
 {{ entry.email }}</td>
 </tr>
+
 </body>
+<h3>Click <a href="http://127.0.0.1:8000">here</a> for main page</h3>
 </html>
