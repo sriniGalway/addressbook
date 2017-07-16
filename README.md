@@ -46,8 +46,16 @@ To create the user:
 To run the Django Development server, use:
     python manage.py runserver
 
-we can access admin and the entries respectively at
+we can access the application with below url. It is mandatory that the user is logged in to access the pages.
 ```
-      http://localhost:8000/admin
-      http://localhost:8000/show
+    Home page: http://localhost:8000
+    Admin page: http://localhost:8000/admin/
+    Create user: http://localhost:8000/entries/create/
+    Retrieve user: http://localhost:8000/entries/<entry_id>/
+    Update user: http://localhost:8000/entries/<entry_id>/edit/
+    Delete user: http://localhost:8000/entries/<entry_id>/delete/
+    
+Note: 
+1. you can get entry_id from the entry list : http://localhost:8000/entries
+2. an user can only perform operations over the address book and entries that he/she owns
 ```
