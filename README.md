@@ -49,11 +49,18 @@ To run the Django Development server, use:
 we can access the application with below url. It is mandatory that the user is logged in to access the pages.
 ```
     Home page: http://localhost:8000
+    
+    ADMINISTRATION ACTIONS
     Admin page: http://localhost:8000/admin/
-    Create user: http://localhost:8000/entries/create/
-    Retrieve user: http://localhost:8000/entries/<entry_id>/
-    Update user: http://localhost:8000/entries/<entry_id>/edit/
-    Delete user: http://localhost:8000/entries/<entry_id>/delete/
+    Register user: http://localhost:8000/register/
+    Login user: http://localhost:8000/login/
+    Logout user: http://localhost:8000/logout/
+    
+    USER RELATED ACTIONS
+    Create entry: http://localhost:8000/entries/create/ (provide user manually for now)
+    Retrieve entry: http://localhost:8000/entries/<entry_id>/
+    Update entry: http://localhost:8000/entries/<entry_id>/edit/
+    Delete entry: http://localhost:8000/entries/<entry_id>/delete/
     
 Note: 
 1. you can get entry_id from the entry list : http://localhost:8000/entries
