@@ -12,7 +12,7 @@ User = get_user_model()
 class EntryForm(forms.ModelForm):
     class Meta:
         model = EntryModel
-        fields = ['name', 'surname', 'mobile','email', 'address']
+        fields = ['name', 'surname', 'mobile','email', 'address'] 
 
     def clean_email(self):
         try:
