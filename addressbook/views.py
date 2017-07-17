@@ -9,7 +9,7 @@ from django.db.models import Q #for search query
 from .models import EntryModel
 from .forms import EntryForm
 
-@login_required(login_url='/admin/login/') #redirect to the login page, if user not logged in
+@login_required(login_url='/login/') #redirect to the login page, if user not logged in
 def entries_create_view(request):
     form = EntryForm(request.POST or None)
 
@@ -29,7 +29,7 @@ def entries_create_view(request):
     return render(request,template_path, context_dictionary)
 
 
-@login_required(login_url='/admin/login/') #redirect to the login page, if user not logged in
+@login_required(login_url='/login/') #redirect to the login page, if user not logged in
 def entries_update_view(request, id=None):
     try:
         entry = EntryModel.objects.get(id=id) #get entry by id
@@ -52,7 +52,7 @@ def entries_update_view(request, id=None):
 
 
 
-@login_required(login_url='/admin/login/')
+@login_required(login_url='/login/')
 def entries_delete_view(request, id=None):
     try:
         entry = EntryModel.objects.get(id=id)
@@ -71,7 +71,7 @@ def entries_delete_view(request, id=None):
 
     return render(request,template_path, context_dictionary)
 
-@login_required(login_url='/admin/login/')
+@login_required(login_url='/login/')
 def entries_detail_view(request, id=None):
     try:
         entry = EntryModel.objects.get(id=id)
@@ -87,7 +87,7 @@ def entries_detail_view(request, id=None):
 
     return render(request,template_path, context_dictionary)
 
-@login_required(login_url='/admin/login/')
+@login_required(login_url='/login/')
 def entries_list_view(request):
     query = request.GET.get("q")
     print(request.user.username)
@@ -110,8 +110,3 @@ def entries_list_view(request):
         return HttpResponseRedirect("admin/login/")
 
     return render(request,template_path, context_dictionary)
-
-@login_required
-def entries_for_user(request):
-    entry = EntryModel.objects.filter(user=request.user)
-    return render(request, 'todos/index.html', {'entry' : entry})
