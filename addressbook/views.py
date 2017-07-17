@@ -17,6 +17,7 @@ def entries_create_view(request):
 
     if form.is_valid():
         obj = form.save(commit=False)
+        obj.user = request.user.username
         obj.save() #saving the form entry to address book
         messages.success(request, "Successfully created a new entry with id={num}.".format(num=obj.id)) #post message after successfully creating entry
         context_dictionary = {
