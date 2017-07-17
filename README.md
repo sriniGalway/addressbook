@@ -35,6 +35,10 @@ To create avid media project:
 
     django-admin.py startproject avidmedia
 
+To create addressbook app:
+
+    django-admin.py startapp addressbook
+
 To create the database table for our Entry model we need to make a migration and run migrate again:
 
     $ python manage.py makemigrations
