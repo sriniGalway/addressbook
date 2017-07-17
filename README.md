@@ -33,8 +33,8 @@ To install all Python dependencies:
 
 Using VIrtual Environemnt for Python 3
 
-    virtualenv -p /usr/bin/python3 avidmediapp
-    source avidmediapp/bin/activate
+    virtualenv -p /usr/bin/python3 venv #venv is the name of the virtual environment
+    source venv/bin/activate
 
 To create avid media project:
 
