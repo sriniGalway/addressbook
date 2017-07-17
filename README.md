@@ -59,3 +59,6 @@ Note:
 1. you can get entry_id from the entry list : http://localhost:8000/entries
 2. an user can only perform operations over the address book and entries that he/she owns
 ```
+To perform serach on the entries, use:
+    search field in http://localhost:8000/entries
+    We can Perform search by name, address, mobile number, or email address
