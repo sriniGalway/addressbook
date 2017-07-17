@@ -50,6 +50,8 @@ def entries_update_view(request, id=None):
 
     return render(request,template_path, context_dictionary)
 
+
+
 @login_required(login_url='/admin/login/')
 def entries_delete_view(request, id=None):
     try:
@@ -88,7 +90,8 @@ def entries_detail_view(request, id=None):
 @login_required(login_url='/admin/login/')
 def entries_list_view(request):
     query = request.GET.get("q")
-    entries_list = EntryModel.objects.all()
+    print(request.user.username)
+    entries_list = EntryModel.objects.filter(user=request.user.username)
     if query is not None:
         entries_list = entries_list.filter(
                 Q(name__icontains=query) |
@@ -107,3 +110,8 @@ def entries_list_view(request):
         return HttpResponseRedirect("admin/login/")
 
     return render(request,template_path, context_dictionary)
+
+@login_required
+def entries_for_user(request):
+    entry = EntryModel.objects.filter(user=request.user)
+    return render(request, 'todos/index.html', {'entry' : entry})

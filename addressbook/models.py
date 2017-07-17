@@ -25,7 +25,7 @@ class EntryModel(models.Model):
                                 "blank": "This field is cannot be empty, please try again."
                                 },
                                 help_text='Must be a unique e-mail address.')
-
+    user = models.CharField(max_length=80)
     #https://docs.djangoproject.com/en/1.11/topics/auth/customizing/
 
 class MyUserManager(BaseUserManager):
