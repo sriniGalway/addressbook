@@ -30,7 +30,12 @@ Command Line Execution:
 To install all Python dependencies:
 
     sudo pip install -r requirements.txt
-    
+
+Using VIrtual Environemnt for Python 3
+
+    virtualenv -p /usr/bin/python3 avidmediapp
+    source avidmediapp/bin/activate
+
 To create avid media project:
 
     django-admin.py startproject avidmedia
