@@ -17,11 +17,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from addressbook.views import entries_list_view
 
-from .views import home
+from .views import home, register, user_login, user_logout
 
 
 urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^entries/', include('addressbook.urls')), #app ontrols all urls
+    url(r'^register/$', register),
+    url(r'^login/$', user_login),
+    url(r'^logout/$', user_logout),
 ]

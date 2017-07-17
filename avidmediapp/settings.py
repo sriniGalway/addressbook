@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 LOGIN_URL = "/login/"
+#custom model as the default user model
+AUTH_USER_MODEL = 'addressbook.MyUser'
 
 # Application definition
 
